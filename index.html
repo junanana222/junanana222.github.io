@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio | junanana2222</title>
+  <title>Portofolio | Arjuna Putra Yusup</title>
   <style>
-    /* === BASIC STYLE === */
+    /* === Gaya Umum === */
     * {
       margin: 0;
       padding: 0;
@@ -61,6 +61,7 @@
       padding: 100px 10%;
     }
 
+    /* === HOME === */
     #home {
       display: flex;
       flex-direction: column;
@@ -69,14 +70,24 @@
       text-align: center;
     }
 
+    #home img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #00c3ff;
+      box-shadow: 0 0 15px rgba(0,195,255,0.4);
+    }
+
     #home h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       color: #00c3ff;
     }
 
     #home p {
       max-width: 600px;
-      margin-top: 20px;
+      margin-top: 15px;
       color: #ccc;
     }
 
@@ -97,8 +108,28 @@
       transform: scale(1.05);
     }
 
-    #projects {
+    /* === ABOUT === */
+    #about {
       background: #161b22;
+      border-radius: 12px;
+      padding: 60px 10%;
+      margin-top: 40px;
+    }
+
+    #about h2 {
+      color: #00c3ff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #about p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    /* === PROJECTS === */
+    #projects {
+      margin-top: 40px;
     }
 
     .project-card {
@@ -112,6 +143,14 @@
 
     .project-card:hover {
       transform: scale(1.03);
+    }
+
+    /* === CONTACT === */
+    #contact {
+      background: #161b22;
+      border-radius: 12px;
+      padding: 60px 10%;
+      margin-top: 40px;
     }
 
     #contact form {
@@ -136,7 +175,7 @@
       color: #888;
     }
 
-    /* === Dark/Light Mode === */
+    /* === DARK/LIGHT MODE === */
     .light-mode {
       background: #f9f9f9;
       color: #000;
@@ -165,56 +204,65 @@
       nav {
         display: none;
       }
+
+      #home h1 {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">MyPortfolio</div>
+    <div class="logo">PortofolioKu</div>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang Saya</a>
+      <a href="#projects">Proyek</a>
+      <a href="#contact">Kontak</a>
     </nav>
-    <button class="toggle-mode" id="modeBtn">☀ Light</button>
+    <button class="toggle-mode" id="modeBtn">☀ Mode Terang</button>
   </header>
 
   <section id="home">
-    <h1>Hello, I'm <span style="color:#00c3ff;">Junanana</span></h1>
-    <p>Welcome to my interactive portfolio website! I'm a web developer passionate about creating dynamic and engaging online experiences.</p>
-    <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">See My Work</button>
+    <img src="Arjuna Putra Yusup.png" alt="Foto Arjuna Putra Yusup">
+    <h1>Halo, Saya <span style="color:#00c3ff;">Arjuna Putra Yusup</span></h1>
+    <p>Saya seorang pelajar yang tertarik pada dunia teknologi, khususnya dalam pengembangan web. Saya senang mempelajari hal baru dan menciptakan sesuatu yang bermanfaat melalui pemrograman.</p>
+    <button class="btn" onclick="scrollToSection('projects')">Lihat Proyek</button>
   </section>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>I love building websites that are beautiful, fast, and interactive. Skilled in HTML, CSS, and JavaScript, and always learning new technologies to improve user experience.</p>
+    <h2>Tentang Saya</h2>
+    <p>
+      Saya adalah individu yang memiliki semangat belajar tinggi dan menyukai tantangan baru.  
+      Saya telah mempelajari dasar-dasar HTML, CSS, dan JavaScript untuk membangun website yang interaktif.  
+      Di luar dunia coding, saya juga suka desain, fotografi, dan hal-hal kreatif lainnya.
+    </p>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2 style="text-align:center;color:#00c3ff;">Proyek Saya</h2>
     <div class="project-card">
-      <h3>💻 Project 1</h3>
-      <p>Responsive landing page built with HTML, CSS, and JS animations.</p>
+      <h3>💻 Website Portofolio</h3>
+      <p>Website pribadi yang menampilkan profil, pengalaman, dan proyek-proyek saya dengan desain modern dan interaktif.</p>
     </div>
     <div class="project-card">
-      <h3>🎨 Project 2</h3>
-      <p>Personal blog website with a clean and minimalistic design.</p>
+      <h3>📱 Desain Aplikasi Mobile</h3>
+      <p>Proyek desain UI/UX sederhana untuk aplikasi jadwal sekolah yang memudahkan siswa dalam mengatur waktu.</p>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
+    <h2 style="text-align:center;color:#00c3ff;">Hubungi Saya</h2>
     <form onsubmit="sendMessage(event)">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button class="btn" type="submit">Send</button>
+      <input type="text" placeholder="Nama Anda" required />
+      <input type="email" placeholder="Email Anda" required />
+      <textarea rows="4" placeholder="Pesan Anda" required></textarea>
+      <button class="btn" type="submit">Kirim Pesan</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Junanana. All rights reserved.</p>
+    <p>© 2025 Arjuna Putra Yusup. Semua hak dilindungi.</p>
   </footer>
 
   <script>
@@ -224,19 +272,24 @@
       header.classList.toggle("scrolled", window.scrollY > 50);
     });
 
-    // === Dark/Light Mode Toggle ===
+    // === Smooth Scroll ===
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+
+    // === Dark/Light Mode ===
     const modeBtn = document.getElementById("modeBtn");
     modeBtn.addEventListener("click", () => {
       document.body.classList.toggle("light-mode");
       modeBtn.textContent = document.body.classList.contains("light-mode")
-        ? "🌙 Dark"
-        : "☀ Light";
+        ? "🌙 Mode Gelap"
+        : "☀ Mode Terang";
     });
 
-    // === Form Message ===
+    // === Form ===
     function sendMessage(e) {
       e.preventDefault();
-      alert("Thanks for your message! I'll get back to you soon 😊");
+      alert("Terima kasih! Pesan Anda telah dikirim 😊");
       e.target.reset();
     }
   </script>
